@@ -169,6 +169,22 @@
                         <a href="https://music.apple.com/bh/artist/melodys-echo-chamber/553142641" target="_blank">Melody's Echo Chamber - Apple Music</a>
                         <a href="https://en.wikipedia.org/wiki/Melody_Prochet" target="_blank">Melody Prochet - Wikipedia </a>
                     `;
+                } else if (query === 'kevin parker') {
+                    description = 'Kevin Parker is an Australian musician, singer, songwriter, record producer, and DJ. He is mainly known for his work as \"Tame Impala," a project that he started in 2007, where he writes, records, and produces the music.';
+                    resultsDiv.innerHTML = `
+                        <a href="https://en.wikipedia.org/wiki/Kevin_Parker_(musician)" target="_blank">Kevin Parker - Wikipedia</a>
+                        <a href="https://genius.com/artists/Kevin-parker" target="_blank">Kevin Parker - Genius</a>
+                        <a href="https://www.imdb.com/name/nm5742798/" target="_blank">Kevin Parker - IMDb</a>
+                    `;
+                } else if (query === 'tame impala') {
+                    description = 'Tame Impala is an Australian psychedelic music project of Australian singer and multi-instrumentalist Kevin Parker. The project began in 2007, and since then has released four studio albums. ';
+                    resultsDiv.innerHTML = `
+                        <a href="https://en.wikipedia.org/wiki/Tame_Impala" target="_blank">Tame Impala - Wikipedia</a>
+                        <a href="https://tameimpala.com" target="_blank">TameImpala.com</a>
+                        <a href="https://open.spotify.com/artist/5INjqkS1o8h1imAzPqGZBb" target="_blank">Tame Impala - Spotify</a>
+                        <a href="https://music.apple.com/sk/artist/tame-impala/290242959" target="_blank">Tame Impala - Apple Music</a>
+                        <a href="https://www.instagram.com/tameimpala/?hl=en" target="_blank">Tame Impala (@tameimpala) • Instagram photos and videos </a>
+                    `;
                 } else {
                     description = `No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", or anything Tame Impala related.`;
                 }
