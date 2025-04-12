@@ -76,7 +76,7 @@
             <span class="letter o">O</span>
         </h1>
         <h2>Google, but it's all Kevin Parker (Tame Impala)</h2>
-        <input type="text" id="searchBox" class="textbox" placeholder="Ask anything Kevin Parker!">
+        <input type="text" id="searchBox" class="textbox" placeholder="Try Searching for Melodys Echo Chamber">
         <button class="button" onclick="search()">Search</button>
         <div id="results" class="results"></div>
 
@@ -126,21 +126,37 @@
                 } else if (query === 'tame impala') {
                     resultsDiv.innerHTML = `
                         <a href="https://en.wikipedia.org/wiki/Tame_Impala" target="_blank">Tame Impala - Wikipedia</a>
-                        <a href="https://tameimpala.com" target="_blank">Tame Impala</a>
+                        <a href="https://tameimpala.com" target="_blank">TameImpala.com</a>
                         <a href="https://open.spotify.com/artist/5INjqkS1o8h1imAzPqGZBb" target="_blank">Tame Impala - Spotify</a>
                         <a href="https://music.apple.com/sk/artist/tame-impala/290242959" target="_blank">Tame Impala - Apple Music</a>
                         <a href="https://www.instagram.com/tameimpala/?hl=en" target="_blank">Tame Impala (@tameimpala) • Instagram photos and videos </a>
                     `;
-                } else if (query === 'Pond') {
+                } else if (query === 'pond') {
                     resultsDiv.innerHTML = `
                         <a href="https://en.wikipedia.org/wiki/Pond_(Australian_band)" target="_blank">Pond - Wikipedia</a>
-                        <a href="https://pond.band" target="_blank">Tame Impala</a>
-                        <a href="https://open.spotify.com/artist/5INjqkS1o8h1imAzPqGZBb" target="_blank">Tame Impala - Spotify</a>
-                        <a href="https://music.apple.com/sk/artist/tame-impala/290242959" target="_blank">Tame Impala - Apple Music</a>
-                        <a href="https://www.instagram.com/tameimpala/?hl=en" target="_blank">Tame Impala (@tameimpala) • Instagram photos and videos </a>
+                        <a href="https://pond.band" target="_blank">Pond.band</a>
+                        <a href="https://open.spotify.com/artist/4skJp5OKvcc9eKokiuhi2s" target="_blank">Pond - Spotify</a>
+                        <a href="https://music.apple.com/us/artist/pond/501465546" target="_blank">Pond - Apple Music</a>
+                        <a href="https://www.youtube.com/@Pondband/about" target="_blank">Pond - Youtube </a>
+                    `;
+                } else if (query === 'melodys echo chamber') {
+                    resultsDiv.innerHTML = `
+                        <a href="https://melodysechochamber.com/" target="_blank">MelodysEchoChamber.com</a>
+                        <a href="https://en.wikipedia.org/wiki/Melody's_Echo_Chamber" target="_blank">Melody's Echo Chamber - Wikipedia</a>
+                        <a href="hhttps://open.spotify.com/artist/1S0vL284jxZYKtZQ2jsQ2X" target="_blank">Melody's Echo Chamber - Spotify</a>
+                        <a href="https://music.apple.com/bh/artist/melodys-echo-chamber/553142641" target="_blank">Melody's Echo Chamber - Apple Music</a>
+                        <a href="https://en.wikipedia.org/wiki/Melody_Prochet" target="_blank">Melody Prochet - Wikipedia </a>
+                    `;
+                } else if (query === 'melody&#39;s echo chamber') {
+                    resultsDiv.innerHTML = `
+                        <a href="https://melodysechochamber.com/" target="_blank">MelodysEchoChamber.com</a>
+                        <a href="https://en.wikipedia.org/wiki/Melody's_Echo_Chamber" target="_blank">Melody's Echo Chamber - Wikipedia</a>
+                        <a href="hhttps://open.spotify.com/artist/1S0vL284jxZYKtZQ2jsQ2X" target="_blank">Melody's Echo Chamber - Spotify</a>
+                        <a href="https://music.apple.com/bh/artist/melodys-echo-chamber/553142641" target="_blank">Melody's Echo Chamber - Apple Music</a>
+                        <a href="https://en.wikipedia.org/wiki/Melody_Prochet" target="_blank">Melody Prochet - Wikipedia </a>
                     `;
                 } else {
-                    resultsDiv.innerHTML = `<p>No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", "The Slow Rush", "Currents", or anything Kevin Parker related! (I might not have it all, Im not god).</p>`;
+                    resultsDiv.innerHTML = `<p>No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", "The Slow Rush", "Currents", or anything Kevin Parker related! (I might not have it all, Im not god, and if you used a single quote it wont work btw it breaks my code).</p>`;
                 }
             }
         </script>
