@@ -17,7 +17,7 @@
             .l { color: #d8733c; } /* Innerspeaker */
             .o { color: #0398ae; } /* Innerspeaker */
             h1 {
-                text-align: center; /* Center the text */
+                text-align: center;
             }
             h2 {
                 text-align: center;
@@ -131,8 +131,16 @@
                         <a href="https://music.apple.com/sk/artist/tame-impala/290242959" target="_blank">Tame Impala - Apple Music</a>
                         <a href="https://www.instagram.com/tameimpala/?hl=en" target="_blank">Tame Impala (@tameimpala) • Instagram photos and videos </a>
                     `;
+                } else if (query === 'Pond') {
+                    resultsDiv.innerHTML = `
+                        <a href="https://en.wikipedia.org/wiki/Pond_(Australian_band)" target="_blank">Pond - Wikipedia</a>
+                        <a href="https://pond.band" target="_blank">Tame Impala</a>
+                        <a href="https://open.spotify.com/artist/5INjqkS1o8h1imAzPqGZBb" target="_blank">Tame Impala - Spotify</a>
+                        <a href="https://music.apple.com/sk/artist/tame-impala/290242959" target="_blank">Tame Impala - Apple Music</a>
+                        <a href="https://www.instagram.com/tameimpala/?hl=en" target="_blank">Tame Impala (@tameimpala) • Instagram photos and videos </a>
+                    `;
                 } else {
-                    resultsDiv.innerHTML = `<p>No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", "The Slow Rush", "Currents", or anything Kevin Parker related! (I might not have it all).</p>`;
+                    resultsDiv.innerHTML = `<p>No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", "The Slow Rush", "Currents", or anything Kevin Parker related! (I might not have it all, Im not god).</p>`;
                 }
             }
         </script>
