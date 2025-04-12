@@ -48,9 +48,15 @@
             .button:hover {
                 background-color: #357ae8;
             }
-            .results {
+            .results-container {
+                display: flex;
+                justify-content: center;
                 margin: 20px auto;
-                width: 50%;
+                width: 80%;
+                gap: 20px;
+            }
+            .results {
+                flex: 1;
                 font-family: 'Product Sans', sans-serif;
                 font-size: 16px;
                 text-align: left;
@@ -64,6 +70,14 @@
             .results a:hover {
                 text-decoration: underline;
             }
+            .description {
+                flex: 1;
+                font-family: 'Product Sans', sans-serif;
+                font-size: 16px;
+                text-align: left;
+                border-left: 1px solid #ccc;
+                padding-left: 20px;
+            }
         </style>
     </head>
     <body>
@@ -75,18 +89,26 @@
             <span class="letter l">L</span>
             <span class="letter o">O</span>
         </h1>
-        <h2>Google, but it's all Kevin Parker (Tame Impala)</h2>
-        <input type="text" id="searchBox" class="textbox" placeholder="Try Searching for Melodys Echo Chamber">
+        <h2>Google, but it's all about Kevin Parker (Tame Impala)</h2>
+        <input type="text" id="searchBox" class="textbox" placeholder="Try Searching for Pond">
         <button class="button" onclick="search()">Search</button>
-        <div id="results" class="results"></div>
+        <div class="results-container">
+            <div id="results" class="results"></div>
+            <div id="description" class="description"></div>
+        </div>
 
         <script>
             function search() {
                 const query = document.getElementById('searchBox').value.toLowerCase();
                 const resultsDiv = document.getElementById('results');
+                const descriptionDiv = document.getElementById('description');
                 resultsDiv.innerHTML = ''; // Clear previous results
+                descriptionDiv.innerHTML = ''; // Clear previous description
+
+                let description = ''; // Variable to hold the description
 
                 if (query === 'lonerism') {
+                    description = 'Lonerism is the second studio album by Tame Impala, released in 2012. It features a blend of psychedelic rock and pop elements. Parker described the album to feature more pop \"vibes" into the album. Parker also described the album to be a \"snapshot" of his life during that time in a Sleeve Notes interview.';
                     resultsDiv.innerHTML = `
                         <a href="https://en.wikipedia.org/wiki/Lonerism" target="_blank">Lonerism - Wikipedia</a>
                         <a href="https://youtu.be/s3H1qzcCMY8?si=0Lb2HWxYzeuRXmXn-lonerism/" target="_blank">Lonerism - Pitchfork Interview</a>
@@ -95,13 +117,15 @@
                         <a href="https://us.tameimpala.com/products/lonerism-vinyl-lp" target="_blank">Lonerism - Tame Impala US</a>
                     `;
                 } else if (query === 'innerspeaker') {
+                    description = 'Innerspeaker is the debut studio album by Tame Impala, released in 2010. Critics say that the album has a 1960s psychedelic rock sound, featuring these elements with songs like \"Lucidity" and \"The Bold Arrow of Time".';
                     resultsDiv.innerHTML = `
                         <a href="https://en.wikipedia.org/wiki/Innerspeaker" target="_blank">Innerspeaker - Wikipedia</a>
                         <a href="https://youtu.be/d33C8IE7WnQ?si=ampcB68ceq0OEfoA" target="_blank">Innerspeaker - Live at the Wave House</a>
                         <a href="https://us.tameimpala.com/products/innerspeaker-vinyl-lp" target="_blank">Innerspeaker - Tame Impala US</a>
-                        <a href="https://open.spotify.com/album/1DNSmmRLfv97Yjq7MTFWng" target="_blank">Innerspeaker - Album by Tame Impala (Spotify) </a>
+                        <a href="https://open.spotify.com/album/1DNSmmRLfv97Yjq7MTFWng" target="_blank">Innerspeaker - Album by Tame Impala (Spotify)</a>
                     `;
                 } else if (query === 'currents') {
+                    description = 'Currents is the third studio album by Tame Impala, released in 2015. The album contains hit songs like \"New Person, Same Old Mistakes" which was covered ny Rihanna in her 2016 album ANTI. Other hit songs include \"Let It Happen" and \"The Less I Know The Better."';
                     resultsDiv.innerHTML = `
                         <a href="https://en.wikipedia.org/wiki/Currents_(Tame_Impala_album)" target="_blank">Currents - Wikipedia</a>
                         <a href="https://open.spotify.com/album/79dL7FLiJFOO0EoehUHQBv" target="_blank">Currents - Album by Tame Impala (Spotify)</a>
@@ -110,6 +134,7 @@
                         <a href="https://youtu.be/nfmJilbZCas?si=aRPc5fXtE_isrcQ6" target="_blank">Tame Impala - Currents In The Making (Youtube)</a>
                     `;
                 } else if (query === 'the slow rush') {
+                    description = 'The Slow Rush is the fourth studio album by Tame Impala, released in 2020. The album is more a personal experience for Parker, shown in songs such as \"Posthumous Forgiveness." This song talks about Parker\'s relationship with his father. The album focuses on being stuck with nostalgia, and memories of the past, and the uncertainty of the future coming. This is showcased on songs like \"Lost in Yesterday" and \"Tommorow\'s Dust."';
                     resultsDiv.innerHTML = `
                         <a href="https://en.wikipedia.org/wiki/The_Slow_Rush" target="_blank">The Slow Rush - Wikipedia</a>
                         <a href="https://youtu.be/wkT6slu6cOc?si=kMAF2BOjxHspiIwN" target="_blank">The Slow Rush Breakdown - Triple J Interview</a>
@@ -117,21 +142,8 @@
                         <a href="https://open.spotify.com/album/31qVWUdRrlb8thMvts0yYL" target="_blank">The Slow Rush - Album by Tame Impala (Spotify)</a>
                         <a href="https://us.tameimpala.com/products/the-slow-rush-cd" target="_blank">The Slow Rush - Tame Impala US</a>
                     `;
-                } else if (query === 'kevin parker') {
-                    resultsDiv.innerHTML = `
-                        <a href="https://en.wikipedia.org/wiki/Kevin_Parker_(musician)" target="_blank">Kevin Parker - Wikipedia</a>
-                        <a href="https://genius.com/artists/Kevin-parker" target="_blank">Kevin Parker - Genius</a>
-                        <a href="https://www.imdb.com/name/nm5742798/" target="_blank">Kevin Parker - IMDb</a>
-                    `;
-                } else if (query === 'tame impala') {
-                    resultsDiv.innerHTML = `
-                        <a href="https://en.wikipedia.org/wiki/Tame_Impala" target="_blank">Tame Impala - Wikipedia</a>
-                        <a href="https://tameimpala.com" target="_blank">TameImpala.com</a>
-                        <a href="https://open.spotify.com/artist/5INjqkS1o8h1imAzPqGZBb" target="_blank">Tame Impala - Spotify</a>
-                        <a href="https://music.apple.com/sk/artist/tame-impala/290242959" target="_blank">Tame Impala - Apple Music</a>
-                        <a href="https://www.instagram.com/tameimpala/?hl=en" target="_blank">Tame Impala (@tameimpala) • Instagram photos and videos </a>
-                    `;
                 } else if (query === 'pond') {
+                    description = 'Pond is an Australian Perth-based band formed in 2008, with members including Nick Allbrook, Jay Watson, Cam Avery, Shiny Joe Ryan, and Jamie Terry. Kevin Parker joined Pond in 2009 live on drums. Later joining studio drums for the 2012 album Beard, Wives, Denim.';
                     resultsDiv.innerHTML = `
                         <a href="https://en.wikipedia.org/wiki/Pond_(Australian_band)" target="_blank">Pond - Wikipedia</a>
                         <a href="https://pond.band" target="_blank">Pond.band</a>
@@ -140,6 +152,7 @@
                         <a href="https://www.youtube.com/@Pondband/about" target="_blank">Pond - Youtube </a>
                     `;
                 } else if (query === 'melodys echo chamber') {
+                    description = 'Melody\'s Echo Chamber is the French pyschedelic pop project of Melody Prochet. Prochet was featured on the 2012 album \"Lonerism" by Tame Impala, on \"Nothing That Has Happend So Far Has Been Anything We Could Control." Parker also collaborated with Prochet on her 2012 studio debut album \"Melody\'s Echo Chamber."';
                     resultsDiv.innerHTML = `
                         <a href="https://melodysechochamber.com/" target="_blank">MelodysEchoChamber.com</a>
                         <a href="https://en.wikipedia.org/wiki/Melody's_Echo_Chamber" target="_blank">Melody's Echo Chamber - Wikipedia</a>
@@ -147,7 +160,8 @@
                         <a href="https://music.apple.com/bh/artist/melodys-echo-chamber/553142641" target="_blank">Melody's Echo Chamber - Apple Music</a>
                         <a href="https://en.wikipedia.org/wiki/Melody_Prochet" target="_blank">Melody Prochet - Wikipedia </a>
                     `;
-                } else if (query === 'melody&#39;s echo chamber') {
+                } else if (query === 'melody\'s echo chamber') {
+                    description = 'Melody\'s Echo Chamber is the French pyschedelic pop project of Melody Prochet. Prochet was featured on the 2012 album \"Lonerism" by Tame Impala, on \"Nothing That Has Happend So Far Has Been Anything We Could Control." Parker also collaborated with Prochet on her 2012 studio debut album \"Melody\'s Echo Chamber."';
                     resultsDiv.innerHTML = `
                         <a href="https://melodysechochamber.com/" target="_blank">MelodysEchoChamber.com</a>
                         <a href="https://en.wikipedia.org/wiki/Melody's_Echo_Chamber" target="_blank">Melody's Echo Chamber - Wikipedia</a>
@@ -156,9 +170,12 @@
                         <a href="https://en.wikipedia.org/wiki/Melody_Prochet" target="_blank">Melody Prochet - Wikipedia </a>
                     `;
                 } else {
-                    resultsDiv.innerHTML = `<p>No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", "The Slow Rush", "Currents", or anything Kevin Parker related! (I might not have it all, Im not god, and if you used a single quote it wont work btw it breaks my code).</p>`;
+                    description = `No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", or anything Tame Impala related.`;
                 }
+
+                // Add the description to the description div
+                descriptionDiv.innerHTML = `<p>${description}</p>`;
             }
         </script>
     </body>
-</html>`
+</html>
