@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style>
+            @font-face {
+                font-family: 'Product Sans';
+                src: url('Product Sans Bold.ttf') format('truetype');
+            }
+            .letter {
+                font-family: 'Product Sans', sans-serif;
+                display: inline-block;
+            }
+            .k { color: #3d170d; } /* TSR */
+            .e { color: #922211; } /* TSR */
+            .v { color: #886593; } /* Currents */
+            .g { color: #182a3d; } /* Lonerism */
+            .l { color: #d8733c; } /* Innerspeaker */
+            .o { color: #0398ae; } /* Innerspeaker */
+            h1 {
+                text-align: center; /* Center the text */
+            }
+            h2 {
+                text-align: center;
+                font-family: 'Product Sans', sans-serif;
+            }
+            .textbox {
+                display: block;
+                margin: 20px auto;
+                font-family: 'Product Sans', sans-serif;
+                font-size: 16px;
+                padding: 10px;
+                width: 50%;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            .button {
+                display: block;
+                margin: 10px auto;
+                padding: 10px 20px;
+                font-family: 'Product Sans', sans-serif;
+                font-size: 16px;
+                background-color: #4285F4;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .button:hover {
+                background-color: #357ae8;
+            }
+            .results {
+                margin: 20px auto;
+                width: 50%;
+                font-family: 'Product Sans', sans-serif;
+                font-size: 16px;
+                text-align: left;
+            }
+            .results a {
+                display: block;
+                color: #4285F4;
+                text-decoration: none;
+                margin: 5px 0;
+            }
+            .results a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            <span class="letter k">K</span>
+            <span class="letter e">E</span>
+            <span class="letter v">V</span>
+            <span class="letter g">G</span>
+            <span class="letter l">L</span>
+            <span class="letter o">O</span>
+        </h1>
+        <h2>Google, but it's all Kevin Parker (Tame Impala)</h2>
+        <input type="text" id="searchBox" class="textbox" placeholder="Ask Kevin Parker anything!">
+        <button class="button" onclick="search()">Search</button>
+        <div id="results" class="results"></div>
+
+        <script>
+            function search() {
+                const query = document.getElementById('searchBox').value.toLowerCase();
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = ''; // Clear previous results
+
+                if (query === 'lonerism') {
+                    resultsDiv.innerHTML = `
+                        <a href="https://en.wikipedia.org/wiki/Lonerism" target="_blank">Lonerism - Wikipedia</a>
+                        <a href="https://youtu.be/s3H1qzcCMY8?si=0Lb2HWxYzeuRXmXn-lonerism/" target="_blank">Lonerism - Pitchfork Interview</a>
+                        <a href="https://youtu.be/mYT_xyCSa7Y?si=Rrg-uXPcYGJ4FEow" target="_blank">Lonerism - Beats 1 Interview (2019)</a>
+                        <a href="https://open.spotify.com/album/3C2MFZ2iHotUQOSBzdSvM7" target="_blank">Lonerism - Album by Tame Impala (2012)</a>
+                        <a href="https://us.tameimpala.com/products/lonerism-vinyl-lp" target="_blank">Lonerism - Tame Impala US</a>
+                    `;
+                } else if (query === 'innerspeaker') {
+                    resultsDiv.innerHTML = `
+                        <a href="https://en.wikipedia.org/wiki/Innerspeaker" target="_blank">Innerspeaker - Wikipedia</a>
+                        <a href="https://youtu.be/d33C8IE7WnQ?si=ampcB68ceq0OEfoA" target="_blank">Innerspeaker - Live at the Wave House</a>
+                        <a href="https://us.tameimpala.com/products/innerspeaker-vinyl-lp" target="_blank">Innerspeaker - Tame Impala US</a>
+                        <a href="https://open.spotify.com/album/1DNSmmRLfv97Yjq7MTFWng" target="_blank">Innerspeaker - Album by Tame Impala</a>
+                    `;
+                } else if (query === 'currents') {
+                    resultsDiv.innerHTML = `
+                        <a href="https://en.wikipedia.org/wiki/Currents_(Tame_Impala_album)" target="_blank">Currents - Wikipedia</a>
+                        <a href="https://www.rollingstone.com/music/music-album-reviews/currents-2-192924/" target="_blank">Currents - Rolling Stone Review</a>
+                    `;
+                } else if (query === 'the slow rush') {
+                    resultsDiv.innerHTML = `
+                        <a href="https://en.wikipedia.org/wiki/The_Slow_Rush" target="_blank">The Slow Rush - Wikipedia</a>
+                        <a href="https://www.nme.com/reviews/album/tame-impala-the-slow-rush-review-2606717" target="_blank">The Slow Rush - NME Review</a>
+                        <a href="https://youtu.be/Kr28pGJZ3nY" target="_blank">The Slow Rush - Apple Music Interview</a>
+                    `;
+                } else if (query === 'kevin parker') {
+                    resultsDiv.innerHTML = `
+                        <a href="https://en.wikipedia.org/wiki/Kevin_Parker_(musician)" target="_blank">Kevin Parker - Wikipedia</a>
+                        <a href="https://www.nme.com/news/music/tame-impala-kevin-parker-new-album-2024-3501230" target="_blank">Kevin Parker - NME News</a>
+                        <a href="https://www.rollingstone.com/music/music-news/kevin-parker-tame-impala-interview-2024-1234824567/" target="_blank">Kevin Parker - Rolling Stone Interview</a>
+                    `;
+                } else if (query === 'tame impala') {
+                    resultsDiv.innerHTML = `
+                        <a href="https://en.wikipedia.org/wiki/Tame_Impala" target="_blank">Tame Impala - Wikipedia</a>
+                        <a href="https://www.nme.com/news/music/tame-impala-new-album-2024-3501230" target="_blank">Tame Impala - NME News</a>
+                        <a href="https://www.rollingstone.com/music/music-news/tame-impala-interview-2024-1234824567/" target="_blank">Tame Impala - Rolling Stone Interview</a>
+                    `;
+                } else {
+                    resultsDiv.innerHTML = `<p>No results found for "${query}". Try searching for "Lonerism", "Innerspeaker", "The Slow Rush", "Currents", or anything Kevin Parker related! (I might not have it all).</p>`;
+                }
+            }
+        </script>
+    </body>
+</html>`
