@@ -185,6 +185,31 @@
                         <a href="https://music.apple.com/sk/artist/tame-impala/290242959" target="_blank">Tame Impala - Apple Music</a>
                         <a href="https://www.instagram.com/tameimpala/?hl=en" target="_blank">Tame Impala (@tameimpala) • Instagram photos and videos </a>
                     `;
+                } else if (query === 'sundown syndrome/remember me') {
+                    description = 'Sundown Syndrome/Remember Me is a single by Tame Impala, released in 2009. The single contains 3 songs, Sundown Syndrome, Remember Me, and Sundown Syndrome (Canyons Remix)'
+                    resultsDiv.innerHTML = `
+                    <a href="https://en.wikipedia.org/wiki/Sundown_Syndrome" target="_blank">Sundown Syndrome - Wikipedia</a>
+                    <a href="https://music.apple.com/us/album/sundown-syndrome-remember-me-single/1445135496" target="_blank">Sundown Syndrome - Apple Music</a>
+                    <a href="https://open.spotify.com/track/3ZuT0Evo8chdVM6rPXXqgd" target="_blank">Sundown Syndrome - Spotify</a>
+                    <a href="https://open.spotify.com/track/48HSUrDZQPVeWuVckLb902" target="_blank">Remember Me - Spotify</a>
+                    <a href="https://www.discogs.com/release/2620614-Tame-Impala-Sundown-Syndrome?srsltid=AfmBOoqbAaS2r1jzwoUBSYMK-6WjFbAniMrwwJids12S6EVUrrA8woGM" target="_blank">Sundown Syndrome/Remember Me - Discogs</a>
+                    `;
+                } else if (query === 'sundown syndrome') {
+                    description = 'Sundown Syndrome is the first track on the single Sundown Syndrome/Remember Me by Tame Impala, released in 2009. The single contains 2 more songs, Remember Me, and Sundown Syndrome (Canyons Remix)'
+                    resultsDiv.innerHTML = `
+                    <a href="https://en.wikipedia.org/wiki/Sundown_Syndrome" target="_blank">Sundown Syndrome - Wikipedia</a>
+                    <a href="https://music.apple.com/us/album/sundown-syndrome-remember-me-single/1445135496" target="_blank">Sundown Syndrome - Apple Music</a>
+                    <a href="https://open.spotify.com/track/3ZuT0Evo8chdVM6rPXXqgd" target="_blank">Sundown Syndrome - Spotify</a>
+                    <a href="https://www.discogs.com/release/2620614-Tame-Impala-Sundown-Syndrome?srsltid=AfmBOoqbAaS2r1jzwoUBSYMK-6WjFbAniMrwwJids12S6EVUrrA8woGM" target="_blank">Sundown Syndrome/Remember Me - Discogs</a>
+                    `;
+                } else if (query === 'remember me') {
+                    description = 'Remember Me is the second track on the single Sundown Syndrome/Remember Me by Tame Impala, released in 2009. The single contains 2 more songs, Sundown Syndrome, and Sundown Syndrome (Canyons Remix)'
+                    resultsDiv.innerHTML = `
+                    <a href="https://en.wikipedia.org/wiki/Sundown_Syndrome" target="_blank">Sundown Syndrome - Wikipedia</a>
+                    <a href="https://genius.com/Tame-impala-remember-me-lyrics" target="_blank">Remember Me - Genius</a>
+                    <a href="https://music.apple.com/us/album/sundown-syndrome-remember-me-single/1445135496" target="_blank">Sundown Syndrome/Remember Me - Apple Music</a>
+                    <a href="https://www.discogs.com/release/2620614-Tame-Impala-Sundown-Syndrome?srsltid=AfmBOoqbAaS2r1jzwoUBSYMK-6WjFbAniMrwwJids12S6EVUrrA8woGM" target="_blank">Sundown Syndrome/Remember Me - Discogs</a>
+                    `;
                 } else {
                     description = `No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", or anything Tame Impala related.`;
                 }
@@ -202,7 +227,7 @@ footer {
     font-family: 'Arial', sans-serif;
     font-size: 14px;
     color: #555;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ccc; 
     position: fixed; /* I think ts makes it be at the very bottom */
     bottom: 0;
     width: 100%;
@@ -215,6 +240,6 @@ footer {
         <footer>
             <p>Made by @I_Like_Tech<br>
             <a href="https://forms.gle/viskkJmfkWtm4qFV7">Click here to give me feedback</a></p>
-        </footer>
-    </body>
-</html>
+        </footer> 
+    </body> 
+</html 
