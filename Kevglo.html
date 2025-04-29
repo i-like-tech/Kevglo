@@ -29,7 +29,7 @@
                 font-family: 'Product Sans', sans-serif;
                 font-size: 16px;
                 padding: 10px;
-                width: 50%;
+                width: 50%; 
                 border: 1px solid #ccc;
                 border-radius: 5px;
             }
@@ -96,7 +96,7 @@
             <div id="results" class="results"></div>
             <div id="description" class="description"></div>
         </div>
-
+      <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Loading" data-fw-param="172311/"></script> <!-- end feedwind code -->
         <script>
             function search() {
                 const query = document.getElementById('searchBox').value.toLowerCase();
@@ -210,6 +210,14 @@
                     <a href="https://music.apple.com/us/album/sundown-syndrome-remember-me-single/1445135496" target="_blank">Sundown Syndrome/Remember Me - Apple Music</a>
                     <a href="https://www.discogs.com/release/2620614-Tame-Impala-Sundown-Syndrome?srsltid=AfmBOoqbAaS2r1jzwoUBSYMK-6WjFbAniMrwwJids12S6EVUrrA8woGM" target="_blank">Sundown Syndrome/Remember Me - Discogs</a>
                     `;
+                } else if (query === 'tame impala ep') {
+                    description = 'Tame Impala EP is the second EP by Tame Impala, released on October 11th, 2008. The EP contains 6 songs, Desire Be Desire Go, Skeleton Tiger, Half Full Glass of Wine, 41 Mosquitoes Flying in Formation, Slide Through My Fingers, and Wander, an iTunes bonus track.'
+                    resultsDiv.innerHTML = `
+                    <a href="https://en.wikipedia.org/wiki/Tame_Impala_(EP)" target="_blank">Tame Impala (EP) - Wikipedia</a>
+                    <a href="https://open.spotify.com/album/2aoEKkx2CaybhYNiu4o2rQ" target="_blank">Tame Impala (EP) - Spotify</a>
+                    <a href="https://music.apple.com/us/album/tame-impala-ep/1445020668" target="_blank">Tame Impala (EP) - Apple Music</a>
+                    <a href="https://www.turntablelab.com/products/tame-impala-tame-impala-record-store-day-ep?srsltid=AfmBOopb8_auxbPnRf8yuTU0Xe_b8uviTwPRh6MNMVpXQ2EHlh7fguio" target="_blank">Tame Impala (EP) - Turntable Lab</a>
+                    `;
                 } else {
                     description = `No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", or anything Tame Impala related.`;
                 }
@@ -238,8 +246,8 @@ footer {
        
 
         <footer>
-            <p>Made by @I_Like_Tech<br>
+            <p>Made by @I_Like_Tech | Version 0.2.0 Alpha<br>
             <a href="https://forms.gle/viskkJmfkWtm4qFV7">Click here to give me feedback</a></p>
         </footer> 
     </body> 
-</html 
+</html>
