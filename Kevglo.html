@@ -2,6 +2,17 @@
 <html>
     <head>
         <style>
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #ccc;
+    margin-top: auto; /* Push the footer to the bottom */
+    width: 100%;
+}
             @font-face {
                 font-family: 'Product Sans';
                 src: url('Product Sans Bold.ttf') format('truetype');
@@ -16,6 +27,7 @@
             .g { color: #182a3d; } /* Lonerism */
             .l { color: #d8733c; } /* Innerspeaker */
             .o { color: #0398ae; } /* Innerspeaker */
+            /* Kevin dont make another album pls I dont want to figure out how to make this be each album */
             h1 {
                 text-align: center;
             }
@@ -81,6 +93,9 @@
         </style>
     </head>
     <body>
+        <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+        <script src="https://files.bpcontent.cloud/2025/06/11/02/20250611020821-6A59MNAL.js"></script>
+</script>
         <h1>
             <span class="letter k">K</span>
             <span class="letter e">E</span>
@@ -92,12 +107,18 @@
         <h2>Google, but it's all about Kevin Parker (Tame Impala)</h2>
         <input type="text" id="searchBox" class="textbox" placeholder="Try Searching for Pond">
         <button class="button" onclick="search()">Search</button>
+
         <div class="results-container">
             <div id="results" class="results"></div>
             <div id="description" class="description"></div>
         </div>
       <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Loading" data-fw-param="172311/"></script> <!-- end feedwind code -->
         <script>
+            document.getElementById('searchBox').addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    search();
+                }
+            });
             function search() {
                 const query = document.getElementById('searchBox').value.toLowerCase();
                 const resultsDiv = document.getElementById('results');
@@ -218,8 +239,16 @@
                     <a href="https://music.apple.com/us/album/tame-impala-ep/1445020668" target="_blank">Tame Impala (EP) - Apple Music</a>
                     <a href="https://www.turntablelab.com/products/tame-impala-tame-impala-record-store-day-ep?srsltid=AfmBOopb8_auxbPnRf8yuTU0Xe_b8uviTwPRh6MNMVpXQ2EHlh7fguio" target="_blank">Tame Impala (EP) - Turntable Lab</a>
                     `;
+                } else if (query === 'justice') {
+                    description = 'Justice is a French music duo consisting of Gaspard Augé and Xavier de Rosnay. In January of 2024, Kevin Parker worked with Justice to release the single "One Night/All Night," which would be featured on their "Hyperdrama" album. In April of 2024, when the album was released, Parker appeared again on "Neverender," which would win a Grammy award in 2025 for Best Dance/Electronic Recording.';
+                    resultsDiv.innerHTML = `
+                    <a href="https://en.wikipedia.org/wiki/Justice_(band)" target="_blank">Justice (Band) - Wikipedia</a>
+                    <a href="https://justice.church" target="_blank">Justice Official Website</a>
+                    <a href="https://www.instagram.com/etjusticepourtous/" target="_blank">Justice - Instagram</a>
+                    <a href="https://www.youtube.com/channel/UCQ5Ssrs48yJBfOesfDqXUeA" target="_blank">Justice - Youtube</a>
+                    `;
                 } else {
-                    description = `No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", or anything Tame Impala related.`;
+                    description = `No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", or ask KevAi.`;
                 }
 
                 // Add the description to the description div
@@ -236,7 +265,7 @@ footer {
     font-size: 14px;
     color: #555;
     border-top: 1px solid #ccc; 
-    position: fixed; /* I think ts makes it be at the very bottom */
+    position: fixed; /* I think ts makes it be at the very bottom (it does)*/
     bottom: 0;
     width: 100%;
 }
@@ -246,7 +275,7 @@ footer {
        
 
         <footer>
-            <p>Made by @I_Like_Tech | Version 0.2.0 Alpha<br>
+            <p>Made by @I_Like_Tech | Version 0.3.0 Alpha Pre-Release<br>
             <a href="https://forms.gle/viskkJmfkWtm4qFV7">Click here to give me feedback</a></p>
         </footer> 
     </body> 
