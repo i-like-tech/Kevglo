@@ -21,13 +21,13 @@ footer {
                 font-family: 'Product Sans', sans-serif;
                 display: inline-block;
             }
-            .k { color: #3d170d; } /* TSR */
-            .e { color: #922211; } /* TSR */
-            .v { color: #886593; } /* Currents */
-            .g { color: #182a3d; } /* Lonerism */
-            .l { color: #d8733c; } /* Innerspeaker */
-            .o { color: #0398ae; } /* Innerspeaker */
-            /* Kevin dont make another album pls I dont want to figure out how to make this be each album */
+            .k { color: #886593; } 
+            .e { color: #6f4683; }
+            .v { color: #a0a0a2; }
+            .g { color: #e23e64; }
+            .l { color: #e69d25; }
+            .o { color: #886593; }
+            /* Special Edition For Currents 10 Year Bday */
             h1 {
                 text-align: center;
             }
@@ -51,14 +51,14 @@ footer {
                 padding: 10px 20px;
                 font-family: 'Product Sans', sans-serif;
                 font-size: 16px;
-                background-color: #4285F4;
+                background-color: #e23e64;
                 color: white;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
             }
             .button:hover {
-                background-color: #357ae8;
+                background-color: #c03152;
             }
             .results-container {
                 display: flex;
@@ -75,7 +75,7 @@ footer {
             }
             .results a {
                 display: block;
-                color: #4285F4;
+                color: #e69d25;
                 text-decoration: none;
                 margin: 5px 0;
             }
@@ -93,9 +93,8 @@ footer {
         </style>
     </head>
     <body>
-        <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
-        <script src="https://files.bpcontent.cloud/2025/06/11/02/20250611020821-6A59MNAL.js"></script>
-</script>
+    <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/06/11/02/20250611020821-6A59MNAL.js"></script>
         <h1>
             <span class="letter k">K</span>
             <span class="letter e">E</span>
@@ -105,7 +104,7 @@ footer {
             <span class="letter o">O</span>
         </h1>
         <h2>Google, but it's all about Kevin Parker (Tame Impala)</h2>
-        <input type="text" id="searchBox" class="textbox" placeholder="Try Searching for Pond">
+        <input type="text" id="searchBox" class="textbox" placeholder="Try Searching for Currents">
         <button class="button" onclick="search()">Search</button>
 
         <div class="results-container">
@@ -247,6 +246,14 @@ footer {
                     <a href="https://www.instagram.com/etjusticepourtous/" target="_blank">Justice - Instagram</a>
                     <a href="https://www.youtube.com/channel/UCQ5Ssrs48yJBfOesfDqXUeA" target="_blank">Justice - Youtube</a>
                     `;
+                } else if (query === 'the dee dee drums') {
+                    description = 'The Dee Dee Drums were a band which consisted of Kevin Parker, Luke Epstein, and Dominic Simper. The band was active until 2007.';
+                    resultsDiv.innerHTML = `
+                    <a href="https://youtu.be/hZTF0sCcbMA?si=2XbMxI7aUAg-fFic" target="_blank">The Dee Dee Drums, The Serpentine - Youtube</a>
+                    <a href="https://www.discogs.com/artist/4559950-The-Dee-Dee-Dums?srsltid=AfmBOorlAQA5yFAhu8i12QSPlpw5OSsbHQF5UMz67fSLD4vthIJeXlsG" target="_blank">The Dee Dee Drums - Discogs</a>
+                    <a href="https://www.last.fm/music/The+Dee+Dee+Dums" target="_blank">The Dee Dee Drums - Last.fm</a>
+                    <a href="https://the-new-curious-city.blog/the-serpentine-the-dee-dee-dums/A" target="_blank">The Dee Dee Drus, The Serpentine - The New Curious City</a>
+                    `;
                 } else {
                     description = `No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", or ask KevAi.`;
                 }
@@ -275,7 +282,7 @@ footer {
        
 
         <footer>
-            <p>Made by @I_Like_Tech | Version 0.3.0 Alpha Pre-Release<br>
+            <p>Made by @I_Like_Tech | Version 0.3.1 Alpha Pre-Release<br>
             <a href="https://forms.gle/viskkJmfkWtm4qFV7">Click here to give me feedback</a></p>
         </footer> 
     </body> 
