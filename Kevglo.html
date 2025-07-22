@@ -21,13 +21,13 @@ footer {
                 font-family: 'Product Sans', sans-serif;
                 display: inline-block;
             }
-            .k { color: #886593; } 
-            .e { color: #6f4683; }
-            .v { color: #a0a0a2; }
-            .g { color: #e23e64; }
-            .l { color: #e69d25; }
-            .o { color: #886593; }
-            /* Special Edition For Currents 10 Year Bday */
+            .k { color: #C7D9E6; } 
+            .e { color: #E6D9C5; }
+            .v { color: #2D3E66; }
+            .g { color: #3A506E; }
+            .l { color: #593E6C; }
+            .o { color: #3A4A32; }
+            /* Special Edition For End Of Summer Release */
             h1 {
                 text-align: center;
             }
@@ -90,6 +90,16 @@ footer {
                 border-left: 1px solid #ccc;
                 padding-left: 20px;
             }
+            #videoContainer {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            video {
+                display: block;
+                margin:  auto;
+            }
         </style>
     </head>
     <body>
@@ -107,11 +117,18 @@ footer {
         <input type="text" id="searchBox" class="textbox" placeholder="Try Searching for Currents">
         <button class="button" onclick="search()">Search</button>
 
+        <h3 id="videoHeader" style="text-align: center; font-family: 'Product Sans', sans-serif;">Watch the End Of Summer teaser</h3>
+        <div id="videoContainer">
+            <video width="640" height="360" controls>
+                <source src="tameimpala_7529936614945000717.mp4" type="video/mp4">
+            </video>
+        </div>
+
         <div class="results-container">
             <div id="results" class="results"></div>
             <div id="description" class="description"></div>
         </div>
-      <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Loading" data-fw-param="172311/"></script> <!-- end feedwind code -->
+        
         <script>
             document.getElementById('searchBox').addEventListener('keydown', function(event) {
                 if (event.key === 'Enter') {
@@ -122,8 +139,13 @@ footer {
                 const query = document.getElementById('searchBox').value.toLowerCase();
                 const resultsDiv = document.getElementById('results');
                 const descriptionDiv = document.getElementById('description');
+                const videoContainer = document.getElementById('videoContainer');
+                const videoHeader = document.getElementById('videoHeader'); // Reference the video header
+
                 resultsDiv.innerHTML = ''; // Clear previous results
                 descriptionDiv.innerHTML = ''; // Clear previous description
+                videoContainer.style.display = 'none'; // Hide the video container
+                videoHeader.style.display = 'none'; // Hide the video header
 
                 let description = ''; // Variable to hold the description
 
@@ -204,6 +226,7 @@ footer {
                         <a href="https://open.spotify.com/artist/5INjqkS1o8h1imAzPqGZBb" target="_blank">Tame Impala - Spotify</a>
                         <a href="https://music.apple.com/sk/artist/tame-impala/290242959" target="_blank">Tame Impala - Apple Music</a>
                         <a href="https://www.instagram.com/tameimpala/?hl=en" target="_blank">Tame Impala (@tameimpala) • Instagram photos and videos </a>
+                        <a href="https://www.tiktok.com/@tameimpala" target="_blank">Tame Impala (@tameimpala) • TikTok </a>                     
                     `;
                 } else if (query === 'sundown syndrome/remember me') {
                     description = 'Sundown Syndrome/Remember Me is a single by Tame Impala, released in 2009. The single contains 3 songs, Sundown Syndrome, Remember Me, and Sundown Syndrome (Canyons Remix)'
@@ -254,6 +277,51 @@ footer {
                     <a href="https://www.last.fm/music/The+Dee+Dee+Dums" target="_blank">The Dee Dee Drums - Last.fm</a>
                     <a href="https://the-new-curious-city.blog/the-serpentine-the-dee-dee-dums/A" target="_blank">The Dee Dee Drus, The Serpentine - The New Curious City</a>
                     `;
+                } else if (query === '12" vinyl') {
+                    description = 'The 12" Vinyl is a single by Tame Impala titled "End Of Summer" releasing/released on July 25th, 2025. The vinyl\'s cover shows the words "Tame Impala" and "[7:14]" on a white background, "[7:14]" may hint to the length of the song. The vinyl was available for pre-order on the Tame Impala US store before selling out, it is unknown if it will be back in stock.';
+                    resultsDiv.innerHTML = `
+                    <a href="https://storeus.tameimpala.com/products/12" target="_blank">12 - Tame Impala Store US</a>
+                    <a href="https://storeuk.tameimpala.com/products/12-1" target="_blank">12 - Tame Impala Store UK</a>
+                    <a href="https://storeau.tameimpala.com/products/12" target="_blank">12 - Tame Impala Store ANZ</a>
+                    <a href="https://forms.sonymusicfans.com/campaign/129307123910/" target="_blank">End Of Summer - Presave</a>
+                    `;
+                } else if (query === '12 inch vinyl') {
+                    description = 'The 12" Vinyl is a single by Tame Impala titled "End Of Summer" releasing/released on July 25th, 2025. The vinyl\'s cover shows the words "Tame Impala" and "[7:14]" on a white background, "[7:14]" may hint to the length of the song. The vinyl was available for pre-order on the Tame Impala US store before selling out, it is unknown if it will be back in stock.';
+                    resultsDiv.innerHTML = `
+                    <a href="https://storeus.tameimpala.com/products/12" target="_blank">12 - Tame Impala Store US</a>
+                    <a href="https://storeuk.tameimpala.com/products/12-1" target="_blank">12 - Tame Impala Store UK</a>
+                    <a href="https://storeau.tameimpala.com/products/12" target="_blank">12 - Tame Impala Store ANZ</a>
+                    <a href="https://forms.sonymusicfans.com/campaign/129307123910/" target="_blank">End Of Summer - Presave</a>
+                    `;
+                } else if (query === '12 in vinyl') {
+                    description = 'The 12" Vinyl is a single by Tame Impala titled "End Of Summer"releasing/released on July 25th, 2025. The vinyl\'s cover shows the words "Tame Impala" and "[7:14]" on a white background, "[7:14]" may hint to the length of the song. The vinyl was available for pre-order on the Tame Impala US store before selling out, it is unknown if it will be back in stock.';
+                    resultsDiv.innerHTML = `
+                    <a href="https://storeus.tameimpala.com/products/12" target="_blank">12 - Tame Impala Store US</a>
+                    <a href="https://storeuk.tameimpala.com/products/12-1" target="_blank">12 - Tame Impala Store UK</a>
+                    <a href="https://storeau.tameimpala.com/products/12" target="_blank">12 - Tame Impala Store ANZ</a>
+                    <a href="https://forms.sonymusicfans.com/campaign/129307123910/" target="_blank">End Of Summer - Presave</a>
+                    `;
+                } else if (query === '12') {
+                    description = 'The 12" Vinyl is a single by Tame Impala titled "End Of Summer" releasing/released on July 25th, 2025. The vinyl\'s cover shows the words "Tame Impala" and "[7:14]" on a white background, "[7:14]" may hint to the length of the song. The vinyl was available for pre-order on the Tame Impala US store before selling out, it is unknown if it will be back in stock.';
+                    resultsDiv.innerHTML = `
+                    <a href="https://storeus.tameimpala.com/products/12" target="_blank">12 - Tame Impala Store US</a>
+                    <a href="https://storeuk.tameimpala.com/products/12-1" target="_blank">12 - Tame Impala Store UK</a>
+                    <a href="https://storeau.tameimpala.com/products/12" target="_blank">12 - Tame Impala Store ANZ</a>
+                    <a href="https://forms.sonymusicfans.com/campaign/129307123910/" target="_blank">End Of Summer - Presave</a>
+                    `;
+                } else if (query === '12"') {
+                    description = 'The 12" Vinyl is a single by Tame Impala titled "End Of Summer" releasing/released on July 25th, 2025. The vinyl\'s cover shows the words "Tame Impala" and "[7:14]" on a white background, "[7:14]" may hint to the length of the song. The vinyl was available for pre-order on the Tame Impala US store before selling out, it is unknown if it will be back in stock.';
+                    resultsDiv.innerHTML = `
+                    <a href="https://storeus.tameimpala.com/products/12" target="_blank">12 - Tame Impala Store US</a>
+                    <a href="https://storeuk.tameimpala.com/products/12-1" target="_blank">12 - Tame Impala Store UK</a>
+                    <a href="https://storeau.tameimpala.com/products/12" target="_blank">12 - Tame Impala Store ANZ</a>
+                    <a href="https://forms.sonymusicfans.com/campaign/129307123910/" target="_blank">End Of Summer - Presave</a>
+                    `;
+                } else if (query === 'end of summer') {
+                    description = '"End Of Summer" by Tame Impala is releasing/was released on July 25th, 2025. Tame Impala is posting teasers of the new single on social media. "End Of Summer" was also included in the 12" vinyl.';
+                    resultsDiv.innerHTML = `
+                    <a href="https://forms.sonymusicfans.com/campaign/129307123910/" target="_blank">End Of Summer - Presave</a>
+                    `;
                 } else {
                     description = `No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", or ask KevAi.`;
                 }
@@ -282,8 +350,9 @@ footer {
        
 
         <footer>
-            <p>Made by @I_Like_Tech | Version 0.3.1 Alpha Pre-Release<br>
+            <p> Made by @I_Like_Tech | Version 0.4.0 Alpha Pre-Release<br>
             <a href="https://forms.gle/viskkJmfkWtm4qFV7">Click here to give me feedback</a></p>
+            <a href="http://i-like-tech.tiiny.site">Visit the I-Like-Tech Website</a></p>
         </footer> 
     </body> 
 </html>
