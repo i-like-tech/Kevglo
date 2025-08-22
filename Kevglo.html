@@ -51,14 +51,14 @@ footer {
                 padding: 10px 20px;
                 font-family: 'Product Sans', sans-serif;
                 font-size: 16px;
-                background-color: #e23e64;
+                background-color: #2D3E66;
                 color: white;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
             }
             .button:hover {
-                background-color: #c03152;
+                background-color: #3A506E;
             }
             .results-container {
                 display: flex;
@@ -75,7 +75,7 @@ footer {
             }
             .results a {
                 display: block;
-                color: #e69d25;
+                color: #3A4A32;
                 text-decoration: none;
                 margin: 5px 0;
             }
@@ -89,16 +89,6 @@ footer {
                 text-align: left;
                 border-left: 1px solid #ccc;
                 padding-left: 20px;
-            }
-            #videoContainer {
-                display: flex;
-                justify-content: center;
-                margin-top: 20px;
-            }
-
-            video {
-                display: block;
-                margin:  auto;
             }
         </style>
     </head>
@@ -116,13 +106,7 @@ footer {
         <h2>Google, but it's all about Kevin Parker (Tame Impala)</h2>
         <input type="text" id="searchBox" class="textbox" placeholder="Try Searching for Currents">
         <button class="button" onclick="search()">Search</button>
-
-        <h3 id="videoHeader" style="text-align: center; font-family: 'Product Sans', sans-serif;">Watch the End Of Summer teaser</h3>
-        <div id="videoContainer">
-            <video width="640" height="360" controls>
-                <source src="tameimpala_7529936614945000717.mp4" type="video/mp4">
-            </video>
-        </div>
+        <button class="button" onclick="window.location.href='KevgloV0.5.0(DarkMode).html'">Switch to Dark Mode</button>
 
         <div class="results-container">
             <div id="results" class="results"></div>
@@ -139,13 +123,14 @@ footer {
                 const query = document.getElementById('searchBox').value.toLowerCase();
                 const resultsDiv = document.getElementById('results');
                 const descriptionDiv = document.getElementById('description');
+
                 const videoContainer = document.getElementById('videoContainer');
                 const videoHeader = document.getElementById('videoHeader'); // Reference the video header
 
                 resultsDiv.innerHTML = ''; // Clear previous results
                 descriptionDiv.innerHTML = ''; // Clear previous description
-                videoContainer.style.display = 'none'; // Hide the video container
-                videoHeader.style.display = 'none'; // Hide the video header
+                if (videoContainer) videoContainer.style.display = 'none'; // Hide the video container if exists
+                if (videoHeader) videoHeader.style.display = 'none'; // Hide the video header if exists
 
                 let description = ''; // Variable to hold the description
 
@@ -318,9 +303,11 @@ footer {
                     <a href="https://forms.sonymusicfans.com/campaign/129307123910/" target="_blank">End Of Summer - Presave</a>
                     `;
                 } else if (query === 'end of summer') {
-                    description = '"End Of Summer" by Tame Impala is releasing/was released on July 25th, 2025. Tame Impala is posting teasers of the new single on social media. "End Of Summer" was also included in the 12" vinyl.';
+                    description = '"End Of Summer" by Tame Impala is was released on July 25th, 2025. Tame Impala was posting teasers of the new single on social media, even creating a new Tiktok page being created. "End Of Summer" was also included in the limited edition 12" vinyl.';
                     resultsDiv.innerHTML = `
-                    <a href="https://forms.sonymusicfans.com/campaign/129307123910/" target="_blank">End Of Summer - Presave</a>
+                    <a href="https://open.spotify.com/album/3kgOKo0TlU22INB7U0Rqdj" target="_blank">End Of Summer - Spotify</a>
+                    <a href="https://soundcloud.com/tame-impala/end-of-summer" target="_blank">End Of Summer - Soundcloud</a>
+                    <a href="hhttps://en.wikipedia.org/wiki/End_of_Summer_(song)" target="_blank">End Of Summer - Wikipedia</a>
                     `;
                 } else {
                     description = `No results found for "${query}". Try checking for a misspelled word, or searching for "Lonerism", "Innerspeaker", or ask KevAi.`;
